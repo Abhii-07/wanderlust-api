@@ -12,9 +12,9 @@ def test_get_itineraries():
 
     # Test GET request to /itineraries
     response = client.get('/itineraries')
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
     data = json.loads(response.data)
-    assert len(data) == 0  # Check if there are no itineraries in the response
+    assert len(data) == 0  
 
     # Test POST request to create an itinerary
     itinerary_data = {
@@ -22,13 +22,13 @@ def test_get_itineraries():
         "activity": "Visit Eiffel Tower"
     }
     response = client.post('/itineraries', json=itinerary_data)
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
 
     # Test GET request to /itineraries again
     response = client.get('/itineraries')
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
     data = json.loads(response.data)
-    assert len(data) == 1  # Check if there is one itinerary in the response
+    assert len(data) == 1  
 
 if __name__ == '__main__':
     test_get_itineraries()

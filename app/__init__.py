@@ -20,5 +20,3 @@ from app.routes.expenses_routes import expenses_bp
 app.register_blueprint(destinations_bp)
 app.register_blueprint(itineraries_bp)
 app.register_blueprint(expenses_bp)
-
-# from app import routes

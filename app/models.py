@@ -1,14 +1,5 @@
 from app import db
 
-# class Destination(db.Model):
-#     # Destination model definition
-
-# class Itinerary(db.Model):
-#     # Itinerary model definition
-
-# class Expense(db.Model):
-#     # Expense model definition
-
 class Destination(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)

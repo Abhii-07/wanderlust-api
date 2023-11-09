@@ -12,9 +12,9 @@ def test_get_expenses():
 
     # Test GET request to /expenses
     response = client.get('/expenses')
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
     data = json.loads(response.data)
-    assert len(data) == 0  # Check if there are no expenses in the response
+    assert len(data) == 0  
 
     # Test POST request to create an expense
     expense_data = {
@@ -23,13 +23,13 @@ def test_get_expenses():
         "amount": 50.0
     }
     response = client.post('/expenses', json=expense_data)
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
 
     # Test GET request to /expenses again
     response = client.get('/expenses')
-    assert response.status_code == 200  # Check if the response status code is 200 (OK)
+    assert response.status_code == 200  
     data = json.loads(response.data)
-    assert len(data) == 1  # Check if there is one expense in the response
+    assert len(data) == 1  
 
 if __name__ == '__main__':
     test_get_expenses()
